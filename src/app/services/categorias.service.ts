@@ -25,8 +25,14 @@ constructor(
 
 listarCategorias(){
   this.http.get(this.UrlApi+'categorias', {headers: { 'Authorization': 'Bearer '+ this.token }}).subscribe(
-    res  => {
+    (res :any) => {
       console.log(res);
+      for(let i = 0; i<res.length; i++){
+        this.categorias.push(res[i])
+
+      }
+      
+     
   
         
 

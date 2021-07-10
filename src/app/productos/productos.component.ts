@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { distanceAndSkiddingToXY } from '@popperjs/core/lib/modifiers/offset';
+import { ProductosService } from '../services/productos.service';
 
 @Component({
   selector: 'app-productos',
@@ -7,14 +8,16 @@ import { distanceAndSkiddingToXY } from '@popperjs/core/lib/modifiers/offset';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-public productos : [1, 2, 3, 4, 5,6,7,8,9,10,11,12] 
 
-  constructor() {
-   this.productos = [1,2,3,4,5,6,7,8,9,10,11,12]
+  constructor(
+    public ProductosService : ProductosService
+  ) {
+
+
    }
 
   ngOnInit(): void {
-    console.log(this.productos)
+    this.ProductosService.listarProductos("apple")
   }
 
 }

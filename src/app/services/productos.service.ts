@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import axios from 'axios';
 import {UrlGlobales} from "../services/UrlGlobales"; 
 import { HttpClient } from '@angular/common/http'; 
-import { Producto } from '../interfaces/Producto.interface';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,6 @@ export class ProductosService {
   public UrlApi: String ;
   public token: String ;
    marcas: any;
-  public producto : Producto = {} 
   public productos : any[] 
  
  

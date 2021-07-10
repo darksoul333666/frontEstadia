@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriasService } from '../services/categorias.service';
 
 @Component({
   selector: 'app-categorias',
@@ -6,14 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent implements OnInit {
-  public categorias : [1, 2, 3, 4, 5,6,7,8,9,10,11,12] 
+  
 
-  constructor() { 
-    this.categorias = [1,2,3,4,5,6,7,8,9,10,11,12]
+  constructor(
+    public CategoriasService : CategoriasService
+  ) { 
   }
 
   ngOnInit(): void {
-    console.log(this.categorias)
+    this.CategoriasService.listarCategorias()
   }
 
 }

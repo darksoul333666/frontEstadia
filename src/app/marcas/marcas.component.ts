@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ProductosService } from '../services/productos.service';
 @Component({
   selector: 'app-marcas',
   templateUrl: './marcas.component.html',
   styleUrls: ['./marcas.component.css']
 })
 export class MarcasComponent implements OnInit {
-  public marcas : [1, 2, 3, 4, 5,6,7,8,9,10,11,12] 
+  public marca: string;
+ // public productos : any[]
   
-  constructor() {
-    this.marcas = [1,2,3,4,5,6,7,8,9,10,11,12]
+  constructor(
+    public ProductosService : ProductosService
+  ) {
+    this.marca = "";
+    //this.productos = 
    }
 
   ngOnInit(): void {
-    console.log(this.marcas)
+    this.ProductosService.listarProductos("adata")
   }
 
 }
