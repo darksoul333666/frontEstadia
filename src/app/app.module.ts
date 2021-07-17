@@ -11,6 +11,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { MarcasComponent } from './marcas/marcas.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,11 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     CategoriasComponent,
     CarritoComponent,
     MarcasComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
