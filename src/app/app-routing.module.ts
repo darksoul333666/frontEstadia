@@ -7,17 +7,19 @@ import { ProductosComponent } from './productos/productos.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { MarcasComponent } from './marcas/marcas.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 const routes: Routes = [
   { path:'login', component:LoginComponent},
   { path:'Home', component:HomeComponent},
   { path:'Nvbar', component:NvbarComponent},
-  { path:'Productos',component:ProductosComponent },
+  { path:'productos/:parameterSearch',component:ProductosComponent },
   { path:'Categorias',component:CategoriasComponent},
   { path:'Carrito',component:CarritoComponent},
-  { path: 'Marcas',component:MarcasComponent}
+  { path: 'Marcas',component:MarcasComponent},
+  { path: 'result', component: SearchResultComponent}
 ];
-
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

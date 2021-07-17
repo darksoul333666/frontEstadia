@@ -43,4 +43,46 @@ listarProductos(marca: any){
     
   )
 }
+
+buscarParametro(parameterSearch: any){
+  this.http.get(this.UrlApi+'productos?busqueda=' +parameterSearch, {headers: { 'Authorization': 'Bearer '+ this.token }}).subscribe(
+    (res : any) => {
+  
+        for( let i = 0; i<res.productos.length;i++){
+             
+             
+             this.productos.push(res.productos[i]);
+
+        }
+
+        console.log(this.productos)
+        console.log('productos?busqueda=' +parameterSearch);
+
+    
+    }
+    
+  )
+}
+listarPorCategorias(categoria:any){
+
+  this.http.get(this.UrlApi+'productos?categoria=' +categoria, {headers: { 'Authorization': 'Bearer '+ this.token }}).subscribe(
+    (res : any) => {
+  
+        for( let i = 0; i<res.productos.length;i++){
+             
+             
+             this.productos.push(res.productos[i]);
+
+        }
+
+    
+        console.log(this.productos);
+
+    
+    }
+    
+  )
+
+}
+
 }
