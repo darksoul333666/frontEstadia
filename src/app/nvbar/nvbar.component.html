@@ -17,7 +17,7 @@
               Dropdown
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li><button class="dropdown-item" href="Categorias" type="button">Categorias</button></li>
+              <li><button  class="dropdown-item" href="Categorias" type="button">Categorias</button></li>
               <li><button class="dropdown-item" type="button">Another action</button></li>
               <li><hr class="dropdown-divider"></li>
               <li><button class="dropdown-item" type="button">Something else here</button></li>
@@ -28,8 +28,8 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <input class="form-control me-5" name ="busqueda" id="search" [(ngModel)] ="busqueda" type="search" placeholder="Marca, producto, tenemos todo!" aria-label="Search">
+          <button class="btn btn-outline-success"  (click) = "buscar()"  type="submit">Buscar</button>
         </form>
       </div>
     </div>
